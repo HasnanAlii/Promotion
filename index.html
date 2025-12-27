@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <title>Code by Hasnan — Jasa Pembuatan Program Profesional</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jasa pembuatan program skripsi, tugas akhir, dan aplikasi bisnis dengan harga transparan.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <style>
+    :root {
+      /* Palette Warna Modern (Indigo-Blue) */
+      --primary: #4f46e5;       /* Indigo 600 */
+      --primary-hover: #4338ca; /* Indigo 700 */
+      --secondary: #0ea5e9;     /* Sky 500 */
+      --dark: #0f172a;          /* Slate 900 */
+      --text: #334155;          /* Slate 700 */
+      --muted: #64748b;         /* Slate 500 */
+      --light: #f8fafc;         /* Slate 50 */
+      --white: #ffffff;
+      
+      --radius-sm: 8px;
+      --radius-lg: 20px;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+      --shadow-glow: 0 0 20px rgba(79, 70, 229, 0.15);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background-color: var(--light);
+      /* Background Mesh Gradient Halus */
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(14, 165, 233, 0.15) 0px, transparent 50%);
+      background-attachment: fixed;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: var(--radius-lg);
+      margin-bottom: 48px;
+      position: sticky;
+      top: 20px;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 1.25rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand p {
+      margin: 0;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+      color: white;
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4);
+    }
+
+    .btn-outline {
+      background: white;
+      color: var(--primary);
+      border: 1px solid rgba(79, 70, 229, 0.2);
+    }
+
+    .btn-outline:hover {
+      background: #f5f3ff;
+      border-color: var(--primary);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 32px;
+      margin-bottom: 60px;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 32px;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.5px;
+    }
+
+    p.lead {
+      color: var(--text);
+      font-size: 1.05rem;
+      margin-bottom: 24px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #eff6ff;
+      color: var(--primary);
+      padding: 6px 12px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    /* Contact Card */
+    .contact-card {
+      background: linear-gradient(145deg, #1e1b4b, #312e81);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .contact-card h3 { color: white; margin-top: 0; }
+    .contact-card p { display: flex; align-items: center; gap: 10px; margin: 12px 0; color: #e0e7ff; }
+    .contact-card a { color: #60a5fa; text-decoration: none; font-weight: 600; }
+
+    /* ===== PACKAGES ===== */
+    .section-title {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    
+    .section-title h2 { margin-bottom: 8px; }
+    .section-title p { color: var(--muted); margin: 0; }
+
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+
+    .pkg-card {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Highlight Pro Package */
+    .pkg-card.pro {
+      border: 2px solid var(--primary);
+      background: linear-gradient(to bottom, #f5f3ff, #ffffff);
+    }
+    
+    .badge {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: var(--primary);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .price-tag {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin: 16px 0;
+    }
+    
+    .price-tag span {
+      font-size: 1rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    ul.features-list {
+      padding: 0;
+      list-style: none;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+
+    ul.features-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    ul.features-list li svg {
+      color: var(--primary);
+      min-width: 18px;
+    }
+
+    /* ===== CALCULATOR ===== */
+    .calculator {
+      border: 1px solid #e2e8f0;
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .input-group {
+      margin-bottom: 8px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 8px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: white;
+      box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+    }
+
+    #hasilHarga {
+      margin-top: 24px;
+      background: linear-gradient(135deg, #eff6ff, #e0e7ff);
+      border: 1px solid #c7d2fe;
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .result-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .result-value {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-top: 4px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      padding-bottom: 20px;
+    }
+
+    /* ANIMATION */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .contact-card { order: 2; }
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 16px; }
+      header { flex-direction: column; gap: 16px; text-align: center; }
+      .calc-grid { grid-template-columns: 1fr; gap: 16px; }
+      .price-tag { font-size: 1.8rem; }
+      h2 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <header>
+    <div class="brand">
+      <h1>Code by Hasnan</h1>
+      <p>Solusi Program & Teknologi</p>
+    </div>
+    <a href="https://wa.me/6283163655478" target="_blank" class="btn btn-primary">
+      <i data-feather="message-circle" style="width:18px"></i> Hubungi via WA
+    </a>
+  </header>
+
+  <section class="hero">
+    <div class="card">
+      <h2>Program Cepat, Rapi, & Terjangkau</h2>
+      <p class="lead">Bantu selesaikan tugas kuliah, skripsi, hingga aplikasi bisnis UKM. Fokus pada kualitas kode dan dokumentasi yang mudah dipahami.</p>
+
+      <div class="tags">
+        <div class="tag"><i data-feather="check-circle" style="width:14px"></i> Revisi Cepat</div>
+        <div class="tag"><i data-feather="book" style="width:14px"></i> Dokumentasi Lengkap</div>
+        <div class="tag"><i data-feather="lock" style="width:14px"></i> Keamanan Dasar</div>
+        <div class="tag"><i data-feather="code" style="width:14px"></i> Source Code Bersih</div>
+      </div>
+    </div>
+
+    <aside class="card contact-card">
+      <h3>Kontak Cepat</h3>
+      <p style="font-size:0.9rem; opacity:0.8; margin-bottom:20px;">Konsultasi gratis 24/7 (Slow respon saat tidur).</p>
+      
+      <p><i data-feather="phone"></i> <a href="https://wa.me/6283163655478">+62 831-6365-5478</a></p>
+      <p><i data-feather="mail"></i> <a href="mailto:ahasnan32@gmail.com" style="color:white">ahasnan32@gmail.com</a></p>
+    </aside>
+  </section>
+
+  <div class="section-title">
+    <h2>Pilihan Paket</h2>
+    <p>Pilih paket yang sesuai dengan skala proyek Anda</p>
+  </div>
+  <section class="packages">
+    <!-- ===== BASIC ===== -->
+    <div class="card pkg-card">
+      <h3>Paket Basic</h3>
+      <p style="color:var(--muted); font-size:0.9rem; margin:0">
+        Cocok untuk Tugas Kuliah / Prototipe
+      </p>
+      <div class="price-tag">Rp 350rb <span>+</span></div>
+      
+      <ul class="features-list">
+        <li><i data-feather="check"></i> Maksimal 5–7 fitur</li>
+        <li><i data-feather="check"></i> Menggunakan Template UI</li>
+        <li><i data-feather="check"></i> 1x Revisi </li>
+        <li><i data-feather="check"></i> Panduan Instalasi</li>
+      </ul>
+      
+      <a href="https://wa.me/6283163655478?text=Halo%20Hasnan,%20saya%20mau%20order%20Paket%20Basic"
+        class="btn btn-outline" style="justify-content:center">
+        Pilih Basic
+      </a>
+    </div>
+
+    <!-- ===== PRO ===== -->
+    <div class="card pkg-card pro">
+      <div class="badge">Rekomendasi</div>
+      <h3>Paket plus</h3>
+      <p style="color:var(--muted); font-size:0.9rem; margin:0">
+        Untuk Skripsi / Aplikasi Bisnis
+      </p>
+      <div class="price-tag" style="color:var(--primary)">Rp 700rb <span>+</span></div>
+      
+      <ul class="features-list">
+        <li><i data-feather="check"></i> Hingga 10–12 fitur kompleks</li>
+        <li><i data-feather="check"></i> Desain UI/UX Custom</li>
+        <li><i data-feather="check"></i> 3x Revisi + Garansi Bug</li>
+        <li><i data-feather="check"></i> Integrasi Database & API</li>
+        <li><i data-feather="check"></i> Full Dokumentasi Teknis</li>
+      </ul>
+      
+      <a href="https://wa.me/6283163655478?text=Halo%20Hasnan,%20saya%20mau%20order%20Paket%20Plus"
+        class="btn btn-primary" style="justify-content:center">
+        Pilih plus
+      </a>
+    </div>
+
+    <!-- ===== PROFESSIONAL / SWASTA ===== -->
+    <div class="card pkg-card pro">
+      <div class="badge" style="background:#0f172a">Professional</div>
+      <h3>Paket Pro</h3>
+      <p style="color:var(--muted); font-size:0.9rem; margin:0">
+        Sistem Profesional & Proyek Swasta
+      </p>
+      <div class="price-tag" style="color:#0f172a">
+        Rp 1.2jt <span>+</span>
+      </div>
+      
+      <ul class="features-list">
+        <li><i data-feather="check"></i> Fitur kompleks & kustom (12+)</li>
+        <li><i data-feather="check"></i> Arsitektur sistem profesional</li>
+        <li><i data-feather="check"></i> UI/UX Premium & Branding</li>
+        <li><i data-feather="check"></i> Multi-role & Hak Akses</li>
+        <li><i data-feather="check"></i> Integrasi API eksternal</li>
+        <li><i data-feather="check"></i> Testing & Optimasi Performa</li>
+        <li><i data-feather="check"></i> Dokumentasi Teknis Lengkap</li>
+        <li><i data-feather="check"></i> Support Pasca Launch</li>
+      </ul>
+      
+      <a href="https://wa.me/6283163655478?text=Halo%20Hasnan,%20saya%20mau%20order%20Paket%20Pro"
+        class="btn btn-primary" style="justify-content:center">
+        Pilih Pro
+      </a>
+    </div>
+  </section>
+
+
+  <section class="card calculator">
+    <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+      <div style="background:var(--primary); padding:8px; border-radius:8px; color:white; display:flex;">
+        <i data-feather="divide-square"></i>
+      </div>
+      <h2 style="margin:0; font-size:1.5rem">Simulasi Harga Cerdas</h2>
+    </div>
+    <p style="color:var(--muted); margin-top:0">Hitung estimasi biaya proyek berdasarkan kompleksitas dan kebutuhan Anda menggunakan logika otomatis.</p>
+
+    <div class="calc-grid">
+      <div class="input-group">
+        <label>Jumlah Fitur Utama</label>
+        <input id="fitur" type="number" min="1" max="20" value="5" placeholder="Contoh: 5">
+      </div>
+
+      <div class="input-group">
+        <label>Integrasi API / Pihak Ketiga</label>
+        <select id="api">
+          <option value="0">Tidak Ada</option>
+          <option value="1">1 API (Sederhana)</option>
+          <option value="2">2–3 API (Kompleks)</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label>Durasi Pengerjaan (Hari)</label>
+        <input id="durasi" type="number" min="3" max="30" value="10">
+      </div>
+
+      <div class="input-group">
+        <label>Tipe Proyek</label>
+        <select id="projek">
+          <option value="0.4">Tugas Kuliah Kecil</option>
+          <option value="0.6">Kerja Praktek (KP)</option>
+          <option value="0.8">Tugas Akhir / Skripsi</option>
+          <option value="1.0">Proyek Swasta / Umum</option>
+        </select>
+      </div>
+
+      <div class="input-group" style="grid-column: 1 / -1;">
+        <label>Jumlah Revisi yang Diinginkan</label>
+        <input id="revisi" type="number" min="0" max="5" value="1">
+      </div>
+    </div>
+
+    <button class="btn btn-primary" style="width:100%; margin-top:24px; justify-content:center; padding:14px;" onclick="hitungHarga()">
+      <i data-feather="search"></i> Hitung Estimasi Harga
+    </button>
+
+    <div id="hasilHarga">
+      <div class="result-label">Estimasi Biaya</div>
+      <div class="result-value" id="nominal">Rp 0</div>
+      <small style="color:var(--muted)">*Harga final dapat berubah setelah diskusi detail.</small>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Code by Hasnan.</p>
+  </footer>
+
+</div>
+
+<script>
+  // Inisialisasi Icon
+  feather.replace();
+
+  // Fungsi Keanggotaan Fuzzy (Naik)
+  function muNaik(x, a, b) { 
+    if (x <= a) return 0; 
+    if (x >= b) return 1; 
+    return (x - a) / (b - a); 
+  }
+
+  function hitungHarga() {
+    // Ambil elemen
+    const fitur = parseInt(document.getElementById('fitur').value) || 0;
+    const api = parseInt(document.getElementById('api').value) || 0;
+    const durasi = parseInt(document.getElementById('durasi').value) || 7;
+    const projek = parseFloat(document.getElementById('projek').value);
+    const revisi = parseInt(document.getElementById('revisi').value) || 0;
+
+    const hasilBox = document.getElementById('hasilHarga');
+    const nominalBox = document.getElementById('nominal');
+
+    /* =====================
+       FUZZYFIKASI
+    ===================== */
+    const μFitur = muNaik(fitur, 5, 12);   // Lebih santai
+    const μApi   = muNaik(api, 1, 3);
+
+    /* Kompleksitas gabungan (tidak agresif) */
+    const alpha = (μFitur + μApi) / 2;
+
+    /* =====================
+       RANGE HARGA BARU
+    ===================== */
+    const basePrice = 300000;   // lebih murah
+    const maxPrice  = 1800000;  // turun jauh
+
+    let harga = basePrice + alpha * (maxPrice - basePrice);
+
+    /* =====================
+       JENIS PROYEK
+    ===================== */
+    harga *= projek; // 0.4 – 1.0
+
+    /* =====================
+       DURASI (penalti kecil)
+    ===================== */
+    if (durasi <= 3) harga += 150000;
+    else if (durasi <= 7) harga += 100000;
+    else if (durasi <= 14) harga += 50000;
+
+    /* =====================
+       REVISI (lebih murah)
+    ===================== */
+    harga += revisi * 50000;
+
+    /* =====================
+       BATAS WAJAR
+    ===================== */
+    harga = Math.max(harga, 300000);
+    harga = Math.min(harga, 2000000);
+
+    /* =====================
+       OUTPUT
+    ===================== */
+    hasilBox.style.display = "block";
+    nominalBox.innerText = "Rp " + Math.round(harga).toLocaleString("id-ID");
+
+    hasilBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+</script>
+
+
+</body>
+</html>
